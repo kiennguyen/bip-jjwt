@@ -27,10 +27,9 @@ public class JwsUtil {
      * @param rawIdToken content to be verified the signature and decrypted
      * @return signed content
      */
-    public ClaimsSet verifyContent(String rawIdToken, String clientId) {
+    public ClaimsSet verifyIdToken(String rawIdToken, String clientId) {
         try {
             String idToken = verifySignatureWithRsa(rawIdToken, clientId);
-            System.out.println(idToken);
             return parseClaimsSet(idToken);
         } catch (Exception e) {
 
